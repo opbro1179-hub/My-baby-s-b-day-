@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Yuvraj ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+      overflow-x: hidden;
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-top: 50px;
+      text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    p {
+      font-size: 22px;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .box {
+      background: rgba(255,255,255,0.15);
+      padding: 35px;
+      margin: 40px auto;
+      border-radius: 25px;
+      max-width: 750px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.3);
+      backdrop-filter: blur(8px);
+      animation: pop 1s ease;
+    }
+
+    @keyframes pop {
+      from {transform: scale(0.85); opacity: 0;}
+      to {transform: scale(1); opacity: 1;}
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 18px;
+      cursor: pointer;
+      background: #ff2f6d;
+      color: white;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      background: #ff004c;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      font-size: 26px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      from {transform: translateY(0); opacity: 1;}
+      to {transform: translateY(-110vh); opacity: 0;}
+    }
+
+    /* Gift Box */
+    .gift {
+      font-size: 80px;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+
+    .gift:hover {
+      transform: scale(1.2);
+    }
+
+    /* Hidden sections */
+    .hidden {
+      display: none;
+    }
+
+    audio {
+      margin-top: 20px;
+      width: 80%;
+      max-width: 400px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio controls autoplay loop>
+  <source src="romantic.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  /* Hearts Animation */
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 4) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 6000);
+  }
+  setInterval(createHeart, 350);
+</script>
+
+
+<!-- STEP 1 -->
+<div class="box" id="step1">
+  <h1>🎂 Happy Birthday Yuvraj ❤️</h1>
+  <p>
+    Today is not just your birthday…  
+    It’s the day the most special person was born.
+  </p>
+  <button onclick="nextStep(1)">Open Your Surprise 💌</button>
+</div>
+
+
+<!-- STEP 2 -->
+<div class="box hidden" id="step2">
+  <h1>💖 A Small Question</h1>
+  <p>
+    Yuvraj… do you know what makes you so special to me?
+  </p>
+  <button onclick="nextStep(2)">Tell me ❤️</button>
+</div>
+
+
+<!-- STEP 3 -->
+<div class="box hidden" id="step3">
+  <h1>🌸 The Truth</h1>
+  <p>
+    You are my comfort.  
+    My happiest place.  
+    The person I feel safe with.
+  </p>
+  <button onclick="nextStep(3)">Next Surprise 🎁</button>
+</div>
+
+
+<!-- STEP 4 Gift -->
+<div class="box hidden" id="step4">
+  <h1>🎁 Click the Gift</h1>
+  <p>There’s something waiting for you inside…</p>
+
+  <div class="gift" onclick="nextStep(4)">🎁</div>
+</div>
+
+
+<!-- FINAL MESSAGE -->
+<div class="box hidden" id="step5">
+  <h1>💌 My Birthday Letter For You</h1>
+
+  <p style="font-size:22px; text-align:left; padding:15px;">
+    Mere pyaare baby Yuvraj 👀❤️ <br><br>
+
+    I love you not because you look good or smart…  
+    I love you because your nature is so pure and caring 😭❤️<br><br>
+
+    The way you make efforts,  
+    the way you protect my heart,  
+    it makes me feel truly special 🤌❤️<br><br>
+
+    Jitni comfortable main tumhare saath hoon,  
+    utni kisi ke saath nahi 😭❤️<br><br>
+
+    Happy Birthday my love…  
+    You are my best gift in life 🎂💖<br><br>
+
+    (Yuvraj, humra dil sirf tohare khatir dhadke la 😭❤️)<br><br>
+
+    Mmmmmwaaaaaah 😘😘❤️
+  </p>
+
+  <h1>🎉 Happy Birthday My Love ❤️</h1>
+</div>
+
+
+<script>
+  function nextStep(step) {
+    document.getElementById("step" + step).style.display = "none";
+    document.getElementById("step" + (step + 1)).style.display = "block";
+  }
+</script>
+
+</body>
+</html>
